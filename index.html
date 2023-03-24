@@ -1,6 +1,6 @@
 <!DOCTYPE html> 
 <html> 
-<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
  
 THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
@@ -24,105 +24,97 @@ none
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
-	
-   <head> 
-      <title>App6---HTML5-Canvas</title>  
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <link rel="stylesheet" href="w3.css">
-      <link rel="stylesheet" href="w3-colors-flat.css">
-   </head> 
+    
+   <head> 
+      <title>App6---HTML5-Canvas</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
 
 
 <script>
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
-	
 
 </script>
 
 
 
-<style>	
+<style>    
 .body {
-     margin: 0em;
+     margin: 0em;
 }
 .page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
 }
-  .page:target {
-    left: 0vw;
-    z-index: 1;
+  .page:target {
+    left: 0vw;
+    z-index: 1;
 }
 </style>
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>App6---HTML5-Canvas</h1>
+    <h1>App6---HTML5-Canvas</h1>
 </div>
-	
+    
 <div id="content" class="w3-container">
-	<!--<p>Content goes here.</p>-->
-		
-	<!--<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+    <!--<p>Content goes here.</p>-->
+        
+    <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at         Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code             does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+     
+    <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-	<p> <a href="one" class="w3-btn w3-black"> Launch Canvas</a> <!--goes to canvas page-->
 
-	
-	
 <canvas id="canvas" width="90%" height="90%"></canvas> <!--code for canvas-->
 <script>
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
-	
+    
 function drawRectangle() { //draws filled rectangle according to dimensions below
-	context.fillRect(50, 50, 100, 100);
+    context.fillRect(50, 50, 100, 100);
 }
-	
+    
 function writeName () { //displays my name according to details below
-	context.font = "24px Arial";
-	context.fillText("Jeremy Lee", 50, 100);
+    context.font = "24px Arial";
+    context.fillText("Jeremy Lee", 50, 100);
 }
 
 function drawImage() { //displays image of Ronnie Coleman squatting
-	var img = new Image();
-	img.onload = function() {
-	context.drawImage(img, 0, 0);
-	}
-	img.src = "https://cdn.shopify.com/s/files/1/0446/0019/7282/files/Ronnie-Coleman-Squats_480x480.jpg?v=1636500880" alt="Ronnie Coleman Squat";
+    var img = new Image();
+    img.onload = function() {
+    context.drawImage(img, 0, 0);
+    }
+    img.src = "https://cdn.shopify.com/s/files/1/0446/0019/7282/files/Ronnie-Coleman-Squats_480x480.jpg?v=1636500880" alt="Ronnie Coleman Squat";
 }
-	
+    
 function clearCanvas() { //clears canvas
-	context.clearRect(0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
 }
-		
-
  
 </script> 
-	
-<!--code for buttons-->
-	<br>
-	<button onclick="drawRectangle()">Draw Rectangle</button>
-	<button onclick="writeName()">Write Name</button>
-	<button onclick="drawImage()">Draw Image</button>
-	<button onclick="clearCanvas()">Clear Canvas</button>
-	
-</div>
+    <!--code for buttons-->
+    <br>
+    <button onclick="drawRectangle()">Draw Rectangle</button>
+    <button onclick="writeName()">Write Name</button>
+    <button onclick="drawImage()">Draw Image</button>
+    <button onclick="clearCanvas()">Clear Canvas</button>
+
 
 <!--end java-->
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+    <p>DIY!</p>
 </footer>
 
 </body>
