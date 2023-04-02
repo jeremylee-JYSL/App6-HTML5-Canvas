@@ -34,15 +34,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
    </head> 
 
 
-<script>
-var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
-
-</script>
-
-
-
 <style>    
 .body {
      margin: 0em;
@@ -61,38 +52,51 @@ console.log("This file last modified " + docMod); // generates message in javaSc
     left: 0vw;
     z-index: 1;
 }
+
+      canvas {
+              border: 2px solid black;
+	     }
+ 
 </style>
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-    <h1>App6---HTML5-Canvas</h1>
+        <h1>App6---HTML5-Canvas</h1>
 </div>
     
 <div id="content" class="w3-container">
-    <!--<p>Content goes here.</p>-->
+
+    <br>
+    <p>Canvas</p>
+    <canvas id="canvas" width="90%" height="90%"></canvas> <!--code for canvas-->
+    <br>
+
+<!--button 1-->
+    <button onclick="drawRectangle()">Draw Rectangle</button>
+ 
+<!--button 2-->
+    <button onclick="printName()">Write Name</button>
+ 
+<!--button 3-->
+    <button onclick="drawImage()">Draw Image</button>
+ 
+<!--button -->
+    <button onclick="clearCanvas()">Clear Canvas</button>
         
     <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at         Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code             does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
      
     <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-    <canvas id="canvas" width="90%" height="90%"></canvas> <!--code for canvas-->
 
     <!--code for buttons-->
  
-    <br>
- 
-    <button onclick="drawRectangle()">Draw Rectangle</button>
- 
-    <button onclick="printName()">Write Name</button>
- 
-    <button onclick="drawImage()">Draw Image</button>
- 
-    <button onclick="clearCanvas()">Clear Canvas</button>
 
-
-<!--end java-->
 
 <script>
+var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
     
