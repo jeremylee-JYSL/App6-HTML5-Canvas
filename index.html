@@ -90,12 +90,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>
 
 <script>
+ 
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
     
 //button 1
 function drawRectangle() { //draws filled rectangle according to dimensions below
@@ -120,7 +121,7 @@ function drawImage() { //displays image of Ronnie Coleman squatting
 
 //button 3
 function clearCanvas() { //clears canvas
-    canvas.width = canvas.width;
+    c.width = c.width;
 }
  
 </script> 
