@@ -1,9 +1,6 @@
 <!DOCTYPE html> 
 <html> 
-<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
- 
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code. 
  
 Authors in chronological order of contribution:
 Tim Riedel
@@ -17,117 +14,117 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-Code drawing
+Code an app that allows the user to do various things on a canvas. 
  
 Known Issues:
-none
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+
+http://www.w3schools.com/html/html5_canvas.asp
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage
 -->
-    
-   <head> 
-      <title>App6---HTML5-Canvas</title>  
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <link rel="stylesheet" href="w3.css">
-      <link rel="stylesheet" href="w3-colors-flat.css">
-   </head> 
+	
+   <head> 
+      <title>App6---HTML5-Canvas</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
 
-
-<style>    
+	
+<style>	
 .body {
-     margin: 0em;
+     margin: 0em;
 }
 .page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
 }
-  .page:target {
-    left: 0vw;
-    z-index: 1;
+  .page:target {
+    left: 0vw;
+    z-index: 1;
 }
-
-      canvas {
-              border: 2px solid black;
-}
- 
+	canvas {
+		border: 2px solid black;
+	}
 </style>
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-        <h1>App6---HTML5-Canvas</h1>
+	<h1>App6---HTML5-Canvas</h1>
 </div>
-    
+	
 <div id="content" class="w3-container">
+	<!--Create canvas-->
+	<br>
+	<p>Canvas</p>
+	<canvas id="myCanvas" width="777" height="333" style="border:2px solid #000000;"></canvas>
+	<br>
+	
+	<!--Button 1 (Draw Rectangle)-->
+	<button onclick="drawRectangle()">Draw Rectangle</button>
+	<!--Calls to drawRectangle function from JavaScript-->
+	
+	<!--Button 2 (Print Name)-->
+	<button onclick="printName()">Print Name</button>
+	<!--Calls to printName function from JavaScript-->
 
-    <br>
-    <p>Canvas</p>
-    <canvas id="myCanvas" width="777" height="333" stle="border:3px solid #000000;"></canvas> <!--code for canvas-->
-    <br>
+	<!--Button 3 (Load Image)-->
+	<button onclick="loadImage()">Load Image</button>
+	<!--Calls to loadImage function from JavaScript-->
 
-<!--button 1-->
-    <button onclick="drawRectangle()">Draw Rectangle</button>
- 
-<!--button 2-->
-    <button onclick="printName()">Write Name</button>
- 
-<!--button 3-->
-    <button onclick="drawImage()">Draw Image</button>
- 
-<!--button -->
-    <button onclick="clearCanvas()">Clear Canvas</button>
-        
-    <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
-     
-    <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
- 
-</div>
+	<!--Button 4 (Reset Canvas)-->
+	<button onclick="resetCanvas()">Reset Canvas</button>
+	<!--Calls to resetCanvas function from JavaScript-->
 
+	<p> Saved Image </p>
+	<!--Here is the image that will be drawn into the canvas-->
+	<img id="image" src="https://cdn.shopify.com/s/files/1/0446/0019/7282/files/Ronnie-Coleman-Squats_480x480.jpg?v=1636500880" alt="Yeah Buddy" width="150" height="200">
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	</div>
+	
 <script>
- 
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-    
-//button 1
-function drawRectangle() { //draws filled rectangle according to dimensions below
-      ctx.fillstyle = "blue"; //blue rectangle
-      ctx.fillRect(50, 50, 100, 100);
-}
-  
-//button 2
-function printName () { //displays my name according to details below
-      ctx.font = "24px Arial";
-      ctx.fillText("Jeremy Lee", 50, 100);
-}
+//FOUR BUTTONS FOR THE CANVAS
+	// According to the third link in the top header comment, it is important initialize important ctx string
+	var c = document.getElementById("myCanvas"); //gets connection between function and the canvas element in the HTML body. 
+	var ctx = c.getContext("2d"); //String to be modified later on by fillStyle and fillRect.
+	
+	// (Button 1) Create a function that draws a rectangle onto the canvas.
+		function drawRectangle() {
+			ctx.fillStyle = "black"; //fill style is black
+			ctx.fillRect(400, 100, 200, 100); //dimensions of rectangle
+		}
 
-//button 3
-function drawImage() { //displays image of Ronnie Coleman squatting
-    var img = new Image();
-    img.onload = function() {
-    ctx.drawImage(img, 0, 0);
-    }
-    img.src = "https://cdn.shopify.com/s/files/1/0446/0019/7282/files/Ronnie-Coleman-Squats_480x480.jpg?v=1636500880" alt="Ronnie Coleman Squat";
-}
+	// (Button 2) Create a function that writes my name onto the canvas.
+		function printName() {
+			ctx.fillText("Jeremy Lee", 333, 333); //fills text of my name in the canvas.
+		}
 
-//button 3
-function clearCanvas() { //clears canvas
-    c.width = c.width;
-}
- 
-</script> 
- 
+	// (Button 3) Create a function that loads an image onto the canvas.
+		function loadImage() {
+			var img = document.getElementById("image");
+			ctx.drawImage(img,0,0,300,300);
+		}
+
+	// (Button 4) Create a button that resets (clears) the canvas.
+		function resetCanvas() {
+			c.width = c.width; //clears the canvas display by resetting the canvas width.
+		}
+</script>
+
 <footer class="w3-bottom w3-container w3-flat-carrot">
-    <p>DIY!</p>
+	<p>DIY!</p>
 </footer>
 
 </body>
