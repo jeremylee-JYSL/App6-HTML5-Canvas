@@ -68,7 +68,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
     <br>
     <p>Canvas</p>
-    <canvas id="canvas" width="777" height="333" stle="border:3px solid #000000;"></canvas> <!--code for canvas-->
+    <canvas id="myCanvas" width="777" height="333" stle="border:3px solid #000000;"></canvas> <!--code for canvas-->
     <br>
 
 <!--button 1-->
@@ -83,7 +83,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!--button -->
     <button onclick="clearCanvas()">Clear Canvas</button>
         
-    <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at         Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code             does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+    <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
      
     <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
  
@@ -94,8 +94,8 @@ var docMod = document.lastModified; // loads last modified time stamp into docMo
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
     
 //button 1
 function drawRectangle() { //draws filled rectangle according to dimensions below
