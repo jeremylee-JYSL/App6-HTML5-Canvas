@@ -100,24 +100,25 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	var c = document.getElementById("myCanvas"); //gets connection between function and the canvas element in the HTML body. 
 	var ctx = c.getContext("2d"); //String to be modified later on by fillStyle and fillRect.
 	
-	// (Button 1) Create a function that draws a rectangle onto the canvas.
+	// Button 1 : Create a function that draws a blue rectangle onto the canvas.
 		function drawRectangle() {
-			ctx.fillStyle = "black"; //fill style is black
+			ctx.fillStyle = "blue"; //fill style is black
 			ctx.fillRect(400, 100, 200, 100); //dimensions of rectangle
 		}
 
-	// (Button 2) Create a function that writes my name onto the canvas.
+	// Button 2 : Create a function that writes my name on the canvas.
 		function printName() {
+			ctx.font = "bold 36px serif"
 			ctx.fillText("Jeremy Lee", 333, 333); //fills text of my name in the canvas.
 		}
 
-	// (Button 3) Create a function that loads an image onto the canvas.
+	// Button 3 : Create a function that loads an image onto the canvas.
 		function loadImage() {
 			var img = document.getElementById("image");
 			ctx.drawImage(img,0,0,300,300);
 		}
 
-	// (Button 4) Create a button that resets (clears) the canvas.
+	// Button 4 : Create a button that clears the canvas.
 		function resetCanvas() {
 			c.width = c.width; //clears the canvas display by resetting the canvas width.
 		}
